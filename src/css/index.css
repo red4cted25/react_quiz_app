@@ -7,7 +7,7 @@
     font-family: 'Coiny';
     font-style: normal;
     font-weight: 400;
-    src: url(/public/Coiny-Regular.ttf) format('ttf');
+    src: url('/public/Coiny-Regular.ttf') format('truetype');
   }
 }
 
