@@ -7,7 +7,8 @@ function Home() {
                 <h1 className="m-0 font-Coiny text-white text-7xl ml-4">CrackIt!</h1>
             </div>
             {/* Start Button */}
-            <button className="rounded-xl bg-[#7A7A7A] py-4 w-[30%] text-lg mt-[4rem]"><a href="/quiz">Start Quiz!</a></button>
+            
+            <a className="rounded-xl bg-[#7A7A7A] py-4 w-[30%] mt-[4rem] text-center" href="/quiz"><button className="text-lg font-bold">Start Quiz!</button></a>
         </div>
     );
 }

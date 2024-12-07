@@ -1,0 +1,103 @@
+[
+    {
+      "text": "What command is used to create a new React app?",
+      "answers": ["npm create-react-app", "npx create-react-app <file name>", "npm start", "npm init"],
+      "correct": 1
+    },
+    {
+      "text": "What does JSX stand for?",
+      "answers": ["JavaScript XML", "JavaScript Expressions", "JavaScript XHTML", "JavaScript Extra"],
+      "correct": 0
+    },
+    {
+      "text": "Who developed React?",
+      "answers": ["Google", "Microsoft", "Facebook", "Twitter"],
+      "correct": 2
+    },
+    {
+      "text": "Which of these is NOT a valid React toolchain?",
+      "answers": ["Next.js", "Vue", "Django", "Gatsby"],
+      "correct": 2
+    },
+    {
+      "text": "What is the purpose of the return statement in a React component?",
+      "answers": ["To terminate a function", "To render HTML elements", "To handle API requests", "To import other components"],
+      "correct": 1
+    },
+    {
+      "text": "What is a prop in React?",
+      "answers": ["A property passed to a component", "A method for managing state", "A function for rendering components", "A CSS styling object"],
+      "correct": 0
+    },
+    {
+      "text": "What is the correct way to import a React component?",
+      "answers": ["import { Component }", "include Component", "require(Component)", "import Component from './Component'"],
+      "correct": 3
+    },
+    {
+      "text": "Which hook is used to manage state in React?",
+      "answers": ["useEffect", "useState", "useContext", "useReducer"],
+      "correct": 1
+    },
+    {
+      "text": "What file extension is commonly used for React components?",
+      "answers": [".jsx", ".tsx", ".html", ".css"],
+      "correct": 0
+    },
+    {
+      "text": "What is the purpose of the cleanup function in useEffect?",
+      "answers": ["To clear timers", "To remove event listeners", "To optimize performance", "All of the above"],
+      "correct": 3
+    },
+    {
+      "text": "What does the input array in useEffect do?",
+      "answers": ["Specifies dependencies for the effect", "Triggers cleanup functions", "Prevents re-renders", "Stores component state"],
+      "correct": 0
+    },
+    {
+      "text": "What are React hooks?",
+      "answers": ["Special functions to access React features", "Methods to update CSS", "Tools to fetch APIs", "Ways to create JSX"],
+      "correct": 0
+    },
+    {
+      "text": "What keyword is used to export a component in React?",
+      "answers": ["export", "module.exports", "default", "return"],
+      "correct": 0
+    },
+    {
+      "text": "Which method is used to render components in React?",
+      "answers": ["ReactDOM.render", "Component.render", "renderPage", "DOM.render"],
+      "correct": 0
+    },
+    {
+      "text": "What type of applications are best suited for React?",
+      "answers": ["Single-page applications", "Static websites", "Command-line tools", "Data storage apps"],
+      "correct": 0
+    },
+    {
+      "text": "What does the state in useState represent?",
+      "answers": ["A value that triggers re-renders", "A constant variable", "CSS properties", "Event handlers"],
+      "correct": 0
+    },
+    {
+      "text": "What happens when setState is called?",
+      "answers": ["The page re-renders", "The app crashes", "The variable is deleted", "The component unmounts"],
+      "correct": 0
+    },
+    {
+      "text": "Which of these can React be used for?",
+      "answers": ["Websites", "Mobile apps", "Interactive dashboards", "All of the above"],
+      "correct": 3
+    },
+    {
+      "text": "What should a component file name be?",
+      "answers": ["Lowercase", "Uppercase", "Capitalized", "CamelCase"],
+      "correct": 2
+    },
+    {
+      "text": "What is the benefit of using JSX?",
+      "answers": ["It allows HTML in JavaScript", "It optimizes performance", "It supports CSS directly", "It enables server-side rendering"],
+      "correct": 0
+    }
+  ]
+  
