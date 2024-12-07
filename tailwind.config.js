@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       colors: {
         'dark-navy': '#242424',
-        'gunmetal-grey': '#818589'
+        'gunmetal-grey': '#818589',
+        'wrong': '#ff0000',
+        'right': '#00ff00'
       }
     },
     fontFamily: {
