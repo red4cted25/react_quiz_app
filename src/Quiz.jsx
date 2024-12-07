@@ -101,33 +101,46 @@ function Quiz() {
     const currentQuestion = questions[currentQuestionIndex];
 
     return (
-      <div>
-        <h2>{currentQuestion.text}</h2>
-        {currentQuestion.answers.map((answer, index) => (
-          <button
-            key={index}
-            onClick={() => handleAnswerSelection(index)}
-            disabled={isAnswerSubmitted}
-            className={`
-              ${isAnswerSubmitted && index === currentQuestion.correct 
-                ? 'bg-[rgba(255, 0, 0, 0.712)]' : ''}
-              ${isAnswerSubmitted && selectedAnswer !== currentQuestion.correct 
-                && selectedAnswer === index 
-                ? 'bg-[rgba(43, 255, 0, 0.712)]' : ''}
-            `}
-          >
-            {answer}
-          </button>
-        ))}
-
+      <div className='h-full'>
+        {/* Question */}
+        <div className="h-[55%] flex items-center justify-center">
+          <h2 className='text-center p-12 text-4xl font-bold '>{currentQuestion.text}</h2>
+        </div>
+        
+        {/* Answers */}
+        <div className="h-[30%] flex justify-center items-center space-x-4 m-4">
+          {currentQuestion.answers.map((answer, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswerSelection(index)}
+              disabled={isAnswerSubmitted}
+              className={`h-full w-full flex-1 flex items-center justify-center cursor-pointer rounded-xl border-4 p-4 text-center
+                // Border Color / Selected Border Color
+                ${selectedAnswer === index ? 'border-gray-800' : 'border-gray-400'}
+                // Correct Answer Color 
+                ${isAnswerSubmitted && index === currentQuestion.correct ? 'bg-[#00ff00] bg-opacity-70' : ''}
+                // Incorrect Answer Color (When Submitted)
+                ${isAnswerSubmitted && selectedAnswer !== currentQuestion.correct && selectedAnswer === index ? 'bg-[#ff0000] bg-opacity-70' : ''}
+              `}
+            >
+              {answer}
+            </button>
+          ))}
+        </div>
+        
+        {/* Submit & Next Question Buttons */}
         {!isAnswerSubmitted && selectedAnswer !== null && (
-          <button onClick={checkAnswer}>Submit Answer</button>
+          <div className="absolute bottom-[45%] right-4">
+            <button onClick={checkAnswer} className='bg-blue-500 text-white px-4 py-2 rounded'>Submit Answer</button>
+          </div>
         )}
 
         {isAnswerSubmitted && (
           <div>
             {currentQuestionIndex < questions.length - 1 && (
-              <button onClick={moveToNextQuestion}>Next Question</button>
+              <div className="absolute bottom-[45%] right-4">
+                <button onClick={moveToNextQuestion} className='bg-blue-500 text-white px-4 py-2 rounded'>Next Question</button>
+              </div>
             )}
           </div>
         )}
@@ -137,9 +150,14 @@ function Quiz() {
 
   const renderBonusQuestion = () => {
     const bonusQuestion = {
-      text: "What is the capital of France?",
-      answers: ["London", "Berlin", "Paris", "Rome"],
-      correct: 2
+      "text": "Which of the following statements about useEffect is NOT true?",
+      "answers": [
+        "useEffect runs after every render unless an input array is provided.",
+        "You can use a cleanup function in useEffect to remove event listeners.",
+        "An empty input array in useEffect ensures the effect runs only once.",
+        "useEffect can directly modify the DOM without a cleanup function."
+      ],
+      "correct": 3
     };
 
     return (
@@ -160,14 +178,32 @@ function Quiz() {
   };
 
   return (
-    <div>
-      
+    <div className='h-screen flex flex-col'>
+      {/* Header */}
+      <header className="h-[10%] bg-gunmetal-grey w-full flex items-center px-4 text-white justify-between">
+        {/* Left Content */}
+        <a href="/" className="flex items-center rounded-2xl hover:bg-dark-navy hover:bg-opacity-70 p-2">
+          <span className="text-2xl">&#8617;</span>
+          <span className="ml-2">Home</span>
+        </a>
+
+        {/* Center Content*/}
+        <div className="flex-grow text-center">
+          <p className="text-lg font-medium">Question {currentQuestionIndex + 1} of {questions.length}</p>
+        </div>
+
+        {/* Right Content*/}
+        <div className="py-3 px-6 text-white flex flex-col items-center rounded-xl bg-dark-navy">
+          <span>Score:</span>
+          <span>{score}</span>
+        </div>
+      </header>
+
+      {/* Render Quiz */}
       {!quizCompleted ? (
         <>
           {!showBonusQuestion ? (
             <>
-              <p>Current Score: {score}</p>
-              <p>Question {currentQuestionIndex + 1} of {questions.length}</p>
               {renderQuestionContent()}
             </>
           ) : (
@@ -181,6 +217,9 @@ function Quiz() {
           <button onClick={restartQuiz}>Restart Quiz</button>
         </div>
       )}
+
+      {/* Footer */}
+      <footer className='fixed bottom-0 h-[5%] bg-gunmetal-grey w-full'></footer>
     </div>
   );
 }
